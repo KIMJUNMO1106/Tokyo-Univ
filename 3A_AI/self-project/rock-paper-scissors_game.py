@@ -50,7 +50,7 @@ def softmax(z):
     return e_z / e_z.sum(axis=1, keepdims=True)
 
 
-class LogisticRegression:
+class SoftmaxRegression:
 
     def __init__(self, learning_rate=0.01, epochs=1000, num_classes=6):
         self.learning_rate = learning_rate
@@ -78,7 +78,7 @@ class LogisticRegression:
         y_pred = softmax(scores)
         return np.argmax(y_pred, axis=1)
 
-model = LogisticRegression(0.01, 5000)
+model = SoftmaxRegression(0.01, 5000)
 model.fit(x_train, y_train)
 
 
